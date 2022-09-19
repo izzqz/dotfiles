@@ -1,0 +1,19 @@
+[user]
+	email = vyacheslav@izzqz.me
+	name = Vyacheslav
+	signingkey = 83F97758783637319C7F9900630D86268AFE5D31
+[commit]
+	gpgsign = true
+[alias]
+	dog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	sign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit -n -S' -i HEAD
+	unsign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit --no-gpg-sign' -i HEAD
+[core]
+	editor = nvim
+	autocrlf = input
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
