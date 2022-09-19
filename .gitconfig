@@ -8,6 +8,13 @@
 	dog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	sign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit -n -S' -i HEAD
 	unsign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit --no-gpg-sign' -i HEAD
+	st = status -sb
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -m
+	rv = remote -v
+	d = diff
+	gl = config --global -l
 [core]
 	editor = nvim
 	autocrlf = input
@@ -19,3 +26,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [pull]
 	ff = only
+[help]
+	autocorrect = 20
