@@ -17,6 +17,7 @@ alias restart="source ~/.config/fish/config.fish"
 alias i="sudo aptitude install -y"
 alias get="aria2c"
 alias p="pass"
+alias pc="pass clip"
 
 if status is-interactive
     rbenv init - fish | source &
