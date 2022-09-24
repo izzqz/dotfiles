@@ -18,6 +18,7 @@ alias i="sudo aptitude install -y"
 alias get="aria2c"
 alias p="pass"
 alias pc="pass clip"
+alias shred="shred -vun 256"
 
 if status is-interactive
     rbenv init - fish | source &
