@@ -15,6 +15,7 @@
 	rv = remote -v
 	d = diff
 	gl = config --global -l
+	all = "!f() { ls -R -d */.git | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
 [core]
 	editor = nvim
 	autocrlf = input
