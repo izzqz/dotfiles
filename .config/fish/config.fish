@@ -15,10 +15,15 @@ alias vf="nvim (fzf)"
 alias cat="batcat"
 alias restart="source ~/.config/fish/config.fish"
 alias i="sudo aptitude install -y"
-alias get="aria2c"
+alias get="aria2c -Z -s16 -x16"
 alias p="pass"
 alias pc="pass clip"
 alias shred="shred -vun 256"
+
+alias g="git"
+function gc
+    git commit -m "$argv"
+end
 
 if status is-interactive
     rbenv init - fish | source &
