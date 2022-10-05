@@ -1,0 +1,21 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+source /home/izzqz/.config/mutt/accounts/v@izzqz.me.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/izzqz/.config/mutt/accounts/v@izzqz.me.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to v@izzqz.me"
+
+# theme
+source ~/.config/mutt/gruvbox/colors-gruvbox-shuber.muttrc
+
+# PGP
+set crypt_use_gpgme=yes
+set postpone_encrypt = yes
+set pgp_self_encrypt = yes
+set crypt_use_pka = no
+set crypt_autosign = yes
+set crypt_autoencrypt = no
+set crypt_autopgp = yes 
+set pgp_sign_as=0x630D86268AFE5D31
+
+set realname = 'Vyacheslav Melnikov'
+set signature = /home/izzqz/.config/mutt/izzqz.sig
+

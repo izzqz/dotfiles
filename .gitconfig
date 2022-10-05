@@ -1,5 +1,5 @@
 [user]
-	email = vyacheslav@izzqz.me
+	email = v@izzqz.me
 	name = izzqz
 	signingkey = 83F97758783637319C7F9900630D86268AFE5D31
 [commit]
@@ -32,3 +32,6 @@
 	autocorrect = 20
 [init]
 	defaultBranch = main
+[sendemail]
+    smtpserver = /usr/bin/msmtp
+	confirm = compose

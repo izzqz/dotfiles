@@ -1,0 +1,22 @@
+# vim: filetype=neomuttrc
+# muttrc file for account v@izzqz.me
+set realname = "v"
+set from = "v@izzqz.me"
+set sendmail = "msmtp -a v@izzqz.me"
+alias me v <v@izzqz.me>
+set folder = "/home/izzqz/.local/share/mail/v@izzqz.me"
+set header_cache = /home/izzqz/.cache/mutt-wizard/v@izzqz.me/headers
+set message_cachedir = /home/izzqz/.cache/mutt-wizard/v@izzqz.me/bodies
+set mbox_type = Maildir
+set hostname = "izzqz.me"
+source /usr/local/share/mutt-wizard/switch.muttrc
+set spoolfile = +INBOX
+set postponed = +Drafts
+set trash = +Trash
+set record = +Sent
+
+macro index o "<shell-escape>mw -y v@izzqz.me<enter>" "run mbsync to sync v@izzqz.me"
+macro index g "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a v@izzqz.me<enter>"  "publish GPG key to WKS provider"
+macro index h "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a v@izzqz.me<enter>" "confirm GPG publication"
+
+mailboxes "=Junk" "=Drafts" "=Sent" "=Trash" "=INBOX"
