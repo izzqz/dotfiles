@@ -5,19 +5,32 @@
 [commit]
 	gpgsign = true
 [alias]
+    # Pretty log output
 	dog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    # Sign current commit
 	sign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit -n -S' -i HEAD
+    # Unsign current commit
 	unsign = -c sequence.editor=: rebase --exec 'git commit --amend --no-edit --no-gpg-sign' -i HEAD
+    # Show status
 	st = status -sb
+    # Show commit list
 	ll = log --oneline
+    # Show last commit
 	last = log -1 HEAD --stat
+    # Commit with message
 	cm = commit -m
+    # Show all remotes
 	rv = remote -v
+    # git diff
 	d = diff
+    # Show all git configuration
 	gl = config --global -l
+    # Run command in all git repos on current directory
 	all = "!f() { ls -R -d */.git | xargs -I{} bash -c \"echo {} && git -C {}/../ $1\"; }; f"
+    # Run command in all git repos on current directory asynchronously
 	all-async = "!f() { ls -R -d */.git | sed s,/.git,, | xargs -P10 -I{} git -C {} $1; }; f"
 [core]
+    commentChar = '#'
 	editor = nvim
 	autocrlf = input
 [credential "https://github.com"]
