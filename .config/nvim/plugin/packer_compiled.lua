@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/izzqz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/izzqz/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-moonfly-colors"] = {
     loaded = true,
     path = "/home/izzqz/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",

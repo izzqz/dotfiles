@@ -4,7 +4,7 @@ set -x GPG_TTY (tty)
 set -e SSH_AUTH_SOCK
 set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh"
 
-nvm use default --silent
+nvm use latest --silent
 
 alias l="ls"
 alias ls="exa --icons -TL 1"
@@ -29,3 +29,7 @@ if status is-interactive
     rbenv init - fish | source &
 end
 
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
