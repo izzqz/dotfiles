@@ -6,7 +6,7 @@
 	gpgsign = true
 [alias]
     # Checkout
-    co = chechout
+    co = checkout
     # Show local branches
     br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
     # Pretty log output
@@ -35,6 +35,8 @@
 	fuckit = reset --hard
     # Undo last commit
     undo = reset HEAD~1 --mixed
+    # Commit with automated message
+	cm = "!f() { git commit -am \"$(git rev-parse --abbrev-ref HEAD) $1\"; }; f"
 [core]
     commentChar = '#'
 	editor = nvim
